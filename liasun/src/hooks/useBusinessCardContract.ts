@@ -20,11 +20,9 @@ export function useBusinessCardContract(){
   const businessCardContract = useAsyncInitialize(async()=>{
     if(!client || !wallet) return
     const contract = BusinessCard.fromAddress(
-      Address.parse("EQCM3b63cele_wx64hUJecFvmYA-xHbU4O0lyj3AJxqcLVEe")
+      Address.parse("EQBMyCljIz242EdIkbYBx8VH0uHbBDfvG3W8Dop0OBMGASXR")
     )
-    const result = client.open(contract) as OpenedContract<BusinessCard>
-
-    return result
+    return  client.open(contract) as OpenedContract<BusinessCard>
   }, [client, wallet])
 
   async function getLikes(){
@@ -34,7 +32,7 @@ export function useBusinessCardContract(){
     }
     setLikes(null)
     const likes = await businessCardContract.getLikes()
-    console.log(likes)
+
     setLikes(Number(likes))
   }
 
@@ -47,7 +45,7 @@ export function useBusinessCardContract(){
     const userInfo = await businessCardContract.getInfo()
     setUserInfo({
       name: userInfo.name,
-      profession: userInfo.profesion,
+      profession: userInfo.profession,
       bio: userInfo.bio
     })
   }
@@ -66,7 +64,7 @@ export function useBusinessCardContract(){
   useEffect(()=>{
     getLikes().catch(console.log)
     getUserInfo().catch(console.log)
-    console.log("useEffect")
+
   }, [businessCardContract])
 
   return {

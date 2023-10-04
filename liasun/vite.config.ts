@@ -5,5 +5,5 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
-  base: "/",
+  base: "/HACK-TON-BERFEST-2023/",
 });

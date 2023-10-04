@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://eanisei.github.io/hack-ton-berfest",
+  "homepage": "https://yau1heni.github.io/HACK-TON-BERFEST-2023",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
